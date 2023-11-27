@@ -1,7 +1,7 @@
 #include <Servo.h>
 
-const int trigPin = 2;
-const int echoPin = 3;
+const int trigPin = 12;
+const int echoPin = 11;
 const int servoPin = 9;
 
 Servo myServo;
