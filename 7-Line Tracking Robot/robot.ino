@@ -16,6 +16,7 @@ void setup() {
   pinMode(MotorL1, OUTPUT);
   pinMode(MotorL2, OUTPUT);
 }
+
 void loop() {
   if (digitalRead(SensorSol) == 0 && digitalRead(SensorOrta) == 1 && digitalRead(SensorSag) == 0) { // Orta sensör çizgiyi gördüğünde robot ileri gitsin.
     ileri();
@@ -27,6 +28,7 @@ void loop() {
     sol();
   }
 }
+
 void ileri() { // Robotun ileri yönde hareketi için fonksiyon tanımlıyoruz.
   digitalWrite(MotorR1, HIGH); // Sağ motorun ileri hareketi aktif
   digitalWrite(MotorR2, LOW); // Sağ motorun geri hareketi pasif
