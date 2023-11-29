@@ -4,11 +4,11 @@
 
 int RST_PIN = 9;
 int SS_PIN = 10;
-int servoPin = 8;
+int servoPin = 3;
 
 Servo motor;
 MFRC522 rfid(SS_PIN, RST_PIN);
-byte ID[4] = {97, 76, 67, 9};
+byte ID[4] = { 97, 76, 67, 9 };
 
 void setup() {
   motor.attach(servoPin);
@@ -21,8 +21,7 @@ void loop() {
   if (!rfid.PICC_IsNewCardPresent() && !rfid.PICC_ReadCardSerial())
     return;
 
-  if (rfid.uid.uidByte[0] == ID[0] && rfid.uid.uidByte[1] == ID[1] &&
-      rfid.uid.uidByte[2] == ID[2] && rfid.uid.uidByte[3] == ID[3]) {
+  if (rfid.uid.uidByte[0] == ID[0] && rfid.uid.uidByte[1] == ID[1] && rfid.uid.uidByte[2] == ID[2] && rfid.uid.uidByte[3] == ID[3]) {
     Serial.println("Kapi acildi");
     ekranaYazdir();
     motor.write(180);
@@ -44,5 +43,3 @@ void ekranaYazdir() {
   }
   Serial.println("");
 }
-
-
